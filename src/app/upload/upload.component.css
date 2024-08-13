@@ -1,0 +1,84 @@
+.upload {
+  background: white;
+  padding: 3vh;
+  border-radius: 10px;
+}
+
+.heading {
+  font-weight: 500;
+}
+
+.uploadDiv {
+  height: calc(100vh - 25vh);
+}
+
+.uploadInput {
+  display: none;
+}
+
+.uploadLabel {
+  position: relative;
+  top: 45%;
+  left: 40%;
+  font-size: larger;
+}
+
+.fileHover {
+  position: fixed;
+  bottom: 12vh;
+  left: 43%;
+  width: 20vh;
+  text-align: center;
+  font-weight: 700;
+  background: #413ed0;
+  padding: 1vh;
+  line-height: 24px;
+  color: white;
+  border-radius: 10px;
+}
+
+.fileUploading {
+  width: 20vh;
+  padding: 3vh;
+  border: 1px solid #d2d2d2;
+  position: fixed;
+  bottom: 10vh;
+  right: 40vh;
+  text-align: center;
+}
+
+.uploadStatus {
+  width: 25vh;
+}
+
+.dragDropSection {
+  padding-top: 2vh;
+}
+
+.fileList {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.fileList th {
+  font-weight: normal;
+}
+
+.fileList td {
+  border-width: 1px 0px 1px 0px;
+  border-style: solid;
+  border-color: #d2d2d2;
+  padding: 2vh 0px;
+}
+
+.fileList th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+}
+
+.fileIcon {
+  width: 15px;
+  vertical-align: middle;
+}

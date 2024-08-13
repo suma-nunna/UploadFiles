@@ -1,0 +1,53 @@
+
+<div class="upload">
+  <h1 class="heading">My Sirius files</h1>
+  <div class="dragDropSection">
+    @if (filesList.length == 0) {
+
+    <div
+      class="uploadDiv"
+      [class.hovering]="isHovering"
+      (dragover)="onDragOver($event)"
+      (dragleave)="onDragLeave($event)"
+      (drop)="onDrop($event)"
+    >
+      <input type="file" (change)="onFileSelected($event)" hidden #fileInput />
+      <p (click)="fileInput.click()" class="uploadLabel">Drag files here</p>
+    </div>
+    } 
+    
+    
+    @if (filesList.length > 0) {
+    <div class="uploadDiv">
+      <table class="fileList">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>File size</th>
+          </tr>
+        </thead>
+        <tbody>
+          @for (file of filesList; track file) {
+          <tr>
+            <td>
+              <img src="{{imgSrc(file?.type)}}" alt="" class="fileIcon">
+              {{ file?.name }}
+            </td>
+            <td>{{ convertFileSize(file?.size) }}</td>
+          </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+    }
+  </div>
+
+  @if (isHovering) {
+  <p class="fileHover">Drop files to upload them</p>
+  } @if (isUploading) {
+  <p class="fileUploading">file uploading</p>
+  } @if (uploadStatus != '') {
+  <p class="fileUploading uploadStatus">{{ uploadStatus }}</p>
+  }
+
+</div>
